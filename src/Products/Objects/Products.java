@@ -38,17 +38,10 @@ public class Products {
 		return pQuantity;
 		
 	}
-	public int changeQuantity(){
+	public void changeQuantity(int num){
 
-		try {
-			System.out.println("What has been the change in quantity");
-		pQuantity =  pQuantity + scan.nextInt();
-
-
-		} catch (Exception e) {
-			System.out.println("Please put a whole number.");
-		}
-		return pQuantity;
+		pQuantity = num;
+	
 	}
 	public String getCode() {
 		

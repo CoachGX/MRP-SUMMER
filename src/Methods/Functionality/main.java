@@ -9,7 +9,7 @@ public class main {
 	
 	
 	private static int numbResponse;
-	private static Object tempObj;
+	private static Products tempObj;
 
 	public static void play() {
 	
@@ -50,19 +50,18 @@ public class main {
 		
 
 	}
-	static Object findObject(String prodName) {
+	static Products findObject(String prodName) {
 		//Isaac explicame este forloop
 		for(int i = 0; i < Constants.pArr.size() ; i++) {
 			 
 			if(prodName.equalsIgnoreCase(Constants.pArr.get(i).getName())) {
 				
-				Object tempObj = Constants.pArr.get(i);
-				return  tempObj;
+				return Constants.pArr.get(i);
 				
 			}
 		
 		}
-		return tempObj;
+		return null;
 		
 		
 		
@@ -83,8 +82,8 @@ public class main {
 		int tempQuantity;
 		
 		try {
-		System.out.println("Presiona 1 para agregar otro producto \n"
-				+ "Presiona 2 para buscar un producto");
+		System.out.println("Presiona 1 para agregar otro producto. \n"
+				+ "Presiona 2 para buscar un producto. \n" + "Presiona 3 para cambiar la cantidad de un producto.");
 		numbResponse = Constants.reader.nextInt();
 		if(numbResponse == 1){
 			
@@ -113,16 +112,28 @@ public class main {
 			
 		}
 		
-		/*else if(numbResponse == 3) {
+		else if(numbResponse == 3) {
 			
 			System.out.println("¿Cual es el nombre del producto?");
 			String temp = Constants.reader.nextLine();
 			temp = Constants.reader.nextLine();
+			
 			tempObj = main.findObject(temp);
-			tempO bj.products.changeQuantity;
+			int num = tempObj.getQuantity();
+
+			if(tempObj != null) {
+				
+				System.out.println("En este momento hay: " + num + " unidades de el producto " + temp + "\n¿A que cantidad deseas cambiar este numero?");
+				num = Constants.reader.nextInt();
+				main.findObject(temp).changeQuantity(num);
+				printArr();
+			}
+			else
+			System.out.println("No se ha encontrado el producto con nombre: " + temp + " porfavor intentelo otra vez");
+			
 			
 		}
-		*/
+		
 		else if(numbResponse == -1) {
 			
 			
