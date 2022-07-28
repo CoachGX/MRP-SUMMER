@@ -5,7 +5,7 @@ import Products.Objects.Products;
 
 public class Constants {
 
-	public static ArrayList<Products> mainArr = new ArrayList<Products>();
+	public static ArrayList<Products> pArr = new ArrayList<Products>();
 	public static Scanner reader = new Scanner(System.in);
 	
 }

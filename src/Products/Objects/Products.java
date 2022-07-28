@@ -1,52 +1,64 @@
 package Products.Objects;
 
 import Constants.Database.Constants;
-
+import java.util.Scanner;
 
 public class Products {
 	
-	private String name;
-	private int quantity;
-	private String code; 
+	private String pName;
+	private int pQuantity;
+	private String pCode; 
+	Scanner scan = new Scanner(System.in);
 	
-	public Products(String name, int quantity) {
+	public Products(String pName, int pQuantity) {
 	
-		this.name = name;
-		this.quantity = quantity;
-		Constants.mainArr.add(this);
+		this.pName = pName;
+		this.pQuantity = pQuantity;
+		Constants.pArr.add(this);
 		
 	}
 	
-	public Products(String name, int quantity, String code) {
+	public Products(String pName, int pQuantity, String pCode) {
 		
-		this.name = name;
-		this.quantity = quantity;
-		this.code = code;
-		Constants.mainArr.add(this);
+		this.pName = pName;
+		this.pQuantity = pQuantity;
+		this.pCode = pCode;
+		Constants.pArr.add(this);
 		
 	}
 	
 	public String getName() {
 		
-		return name;
+		return pName;
 		
 	}
 	
 	public int getQuantity() {
 		
-		return quantity;
+		return pQuantity;
 		
 	}
-	
+	public int changeQuantity(){
+
+		try {
+			System.out.println("What has been the change in quantity");
+		pQuantity =  pQuantity + scan.nextInt();
+
+
+		} catch (Exception e) {
+			System.out.println("Please put a whole number.");
+		}
+		return pQuantity;
+	}
 	public String getCode() {
 		
-		return code;
+		return pCode;
 		
 	}
 	
 	public String toString() {
 		
-		return "Buscaste el producto " + name + ". Hay " + quantity + " disponibles y el codigo del producto es " + code;
+		return "Buscaste el producto " + pName + ". Hay " + pQuantity + " disponibles y el codigo del producto es " + pCode;
 		
 	}
 	

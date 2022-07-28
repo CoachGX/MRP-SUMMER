@@ -9,7 +9,8 @@ public class main {
 	
 	
 	private static int numbResponse;
-	
+	private static Object tempObj;
+
 	public static void play() {
 	
 	
@@ -29,17 +30,17 @@ public class main {
    * 
    */
 	
-	static void findObject(String prodName) {
-		
-		for(int i = 0; i < Constants.mainArr.size() ; i++) {
+	static void findObjectName(String prodName) {
+		//Isaac explicame este forloop
+		for(int i = 0; i < Constants.pArr.size() ; i++) {
 			 
-			if(prodName.equalsIgnoreCase(Constants.mainArr.get(i).getName())) {
+			if(prodName.equalsIgnoreCase(Constants.pArr.get(i).getName())) {
 				
-				System.out.println(Constants.mainArr.get(i));
+				System.out.println(Constants.pArr.get(i));
 				break;
 				
 			}
-			if(i == Constants.mainArr.size() - 1) {
+			if(i == Constants.pArr.size() - 1) {
 				System.out.println("0");
 			}
 			
@@ -49,12 +50,30 @@ public class main {
 		
 
 	}
+	static Object findObject(String prodName) {
+		//Isaac explicame este forloop
+		for(int i = 0; i < Constants.pArr.size() ; i++) {
+			 
+			if(prodName.equalsIgnoreCase(Constants.pArr.get(i).getName())) {
+				
+				Object tempObj = Constants.pArr.get(i);
+				return  tempObj;
+				
+			}
+		
+		}
+		return tempObj;
+		
+		
+		
+
+	}
 	
 	private static void printArr() {
 		
-		for(int i = 0; i < Constants.mainArr.size(); i++) {
-			System.out.println((i + 1) + ". " + Constants.mainArr.get(i).getName() + ", " +
-					Constants.mainArr.get(i).getQuantity() + ", " + Constants.mainArr.get(i).getCode());
+		for(int i = 0; i < Constants.pArr.size(); i++) {
+			System.out.println((i + 1) + ". " + Constants.pArr.get(i).getName() + ", " +
+					Constants.pArr.get(i).getQuantity() + ", " + Constants.pArr.get(i).getCode());
 		}
 	}
 	
@@ -90,10 +109,20 @@ public class main {
 			System.out.println("¿Cual es el nombre del producto?");
 			String temp = Constants.reader.nextLine();
 			temp = Constants.reader.nextLine();
-			main.findObject(temp);
+			main.findObjectName(temp);
 			
 		}
 		
+		/*else if(numbResponse == 3) {
+			
+			System.out.println("¿Cual es el nombre del producto?");
+			String temp = Constants.reader.nextLine();
+			temp = Constants.reader.nextLine();
+			tempObj = main.findObject(temp);
+			tempO bj.products.changeQuantity;
+			
+		}
+		*/
 		else if(numbResponse == -1) {
 			
 			
